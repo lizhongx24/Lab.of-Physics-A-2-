@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}摘要}{2}{section.1}%
+\contentsline {section}{\numberline {2}实验原理}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}光纤光谱仪结构}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}光源谱线宽度与相干长度}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}元素的特征谱线}{2}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}热辐射光谱}{3}{subsection.2.4}%
+\contentsline {section}{\numberline {3}实验仪器}{3}{section.3}%
+\contentsline {section}{\numberline {4}实验步骤与数据分析}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}观察常见光源的光谱}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}测量元素灯灯特征光谱}{4}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}测量介质的光谱透射率}{6}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}测量溴钨灯的灯丝温度}{7}{subsection.4.4}%
+\contentsline {section}{\numberline {5}分析讨论}{10}{section.5}%
+\contentsline {section}{\numberline {6}原始数据}{10}{section.6}%

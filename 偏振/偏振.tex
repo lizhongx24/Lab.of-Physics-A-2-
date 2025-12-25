@@ -1,0 +1,266 @@
+\documentclass[12pt]{article}
+
+\usepackage{ctex}
+
+\usepackage{graphicx,float,indentfirst,amsmath,amssymb,geometry,subfig,hyperref,tikz}
+\usepackage{bookmark}
+\usetikzlibrary{arrows.meta, calc}
+
+\hypersetup{hidelinks}
+
+\geometry{a4paper,scale=0.8}
+
+\title{偏振实验报告}
+\author{\kaishu 工物42 \quad \kaishu 李中翔 \quad \kaishu 2024011032}
+\date{\today}
+\pagenumbering{arabic}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+\section{摘要}
+本实验通过观察偏振光通过不同角度偏振片的现象对偏振光的概念进行直观的理解并由此掌握偏振光起偏和检偏的方法。在此基础上我们进一步研究验证马吕斯定律和布儒斯特定律两个偏振相关的重要定律。最后我们将对双折射和1/4、1/2以及全波片特性进行观察和分析。
+
+\section{实验原理}
+
+\subsection{马吕斯定律}
+我们为了评估偏振片的性能需要引入主透射率和消光比两个参数。我们将沿着透射轴方向光强透射率$T_1$和沿着消光轴方向光强透射率$T_2$称之为主透射率，并通过他们可以得到消光比$e=T_2/T_1$。如果一个线偏振光振动方向和偏振片透射轴方向成$\theta$角度，那么经过偏振片后的透射率为$T_\theta=(T_1-T_2)cos^2\theta +T_2$，这就是我们熟知的马吕斯定律，我们也可以写为光强形式$I_m=(I_{max}-I_{min})cos^2\theta+I_{min}$。
+
+\subsection{布儒斯特定律}
+当一束平面电磁波以$\theta_i$的入射角从空气（折射率近似为1）射入折射率为n的无吸收介质时将会发生折射和反射，折射角为$\theta_t$。如果$\theta_i+\theta_t=\dfrac{\pi}{2}$，反射光中没有电矢量与入射面平行的分量,我们结合折射定律知道这时候的入射角$\theta_i=arctan\,n$,我们将此时的入射角称之为布儒斯特角。利用这个性质我们可以让光通过偏振片后以布儒斯特角入射反射镜，通过反射光线是否出现消光现象来判断偏振器透射轴的方向。当然，也可以通过测量布儒斯特角来计算出反射介质的折射率。
+
+\subsection{波片与偏振态改变}
+    当一对正交的线偏振光经过双折射材料做成的延迟器的时候会因为偏振光分量在材料中传播速度不同而产生相位差$\delta$,我们称之为相位延迟量,这两个方向称之为慢轴和快轴。由于相位延迟量的不同我们可以定义出1/4波片、1/2波片和全波片。而两个1/4波片快轴平行时会组合成一个1/2波片，快轴垂直时组成一个1/4波片。借助这个原理我们可以通过一个已知快慢轴的1/4波片与一个未知快慢轴的1/4波片叠加观察消光效果来判断出未知波片的快慢轴。
+    
+    由于线偏振光穿过波片后两个分量会产生相位差，而在一般情况下它将成为一个椭圆偏振光，对于1/4波片而言，检偏器的透射轴平行于椭圆长轴时光强为正比于$a^2$的$I_{max}$，相应地平行于短轴时光强为正比于$b^2$的$I_{min}$，所以可以推导出相位延迟量$|sin\delta|=\dfrac{2\sqrt{I_{min}/I_{max}}}{sin(2\beta)(1+I_{min}/I_{max})}$以及长轴与水平方向所成的方位角$\psi=\dfrac{1}{2}arctan(tan2\beta ·cos\delta)$，其中$\beta$为线偏振光振动方向与水平方向的夹角。
+
+\section{实验仪器}
+    波长为650nm的半导体激光器、反射镜及转台、旋转调整架（用于旋转起偏器、检偏器和两个1/4波片）、偏光元件（起偏器P、检偏器A和两个1/4波片$C_0$、$C_x$，其中$C_0$快轴方向已经大致确定）、光强计。
+
+\section{实验步骤及数据处理}
+\subsection{准备工作}
+    我们首先将元件和支架安装到光学平台上，对各个元件进行调节位置、高度和角度使得元件等高共轴。然后我们打开光源进行进一步细调使得激光垂直通过每个元件的中心。
+
+\subsection{观察布儒斯特角和偏振器的特性}
+    我们转动反射镜的水平转台调整至反射激光刚好进入激光器的发射孔（我们可以借助带小孔的感光卡片进行观察，让反射光线在卡片上亮点与小孔重合）。这时我们记录下转台的方位角$\alpha_{i=0}=304.0^\circ$作为入射角为0的位置。
+
+    我们转动转台使得入射角$\theta_i$在$56^{\circ}$附近，然后我们调节起偏器P和反射镜角度，当反射光强最弱且较大幅度转动反射镜时反射光强有明显变化时（防止起偏器与激光器偏振方向垂直导致的消光造成干扰），记录下此时的反射镜方位角读数$\alpha_{B}$，这样我们就可以得到布儒斯特角$\theta_B=|\alpha_B-\alpha_{i=0}|$。我们再记录下此时起偏器P刻度盘读数$p_{\leftrightarrow}$，由布儒斯特定律我们知道此时起偏器P的透射轴处于水平方向。我们反复测量三次得到下表:
+
+\begin{table}[!ht]
+\centering
+\caption{布儒斯特角实验数据记录表}
+\begin{tabular}{|c|c|c|c|} \hline
+序号&$\alpha_B (^{\circ})$&$p_{\leftrightarrow} (^{\circ}) $&计算布氏角$\theta_B (^{\circ})$\\ \hline
+1	&247.5 &	141.0 &	56.5   \\ \hline
+2	&247.6 &	140.0 &	56.4 \\ \hline
+3	&248.0 &   140.0 & 56.0 \\ \hline
+平均值 &247.7 	&140.3 &	56.3\\\hline
+\end{tabular}
+\end{table}
+
+我们根据实验数据中布儒斯特角的平均值来计算折射率可以得到$n=tan\theta_B\approx1.50$。
+
+下面我们再来确定偏振器A的透射轴方向，我们用上面数据中起偏器刻度盘读数的平均值$\overline{p_{\leftrightarrow}}=140.3^{\circ}$作为起偏器P透射轴位于水平方向的方位角。我们调节起偏器P使得刻度盘位于$\overline{p_{\leftrightarrow}}$，然后我们将反射镜移除光路并转动检偏器A使之与P正交消光（我们以光强探测器的示数为0或者0.1$\,\mu$W来作为消光的判据），这时A的透射轴是与P垂直的，也就是位于竖直方向，我们记录下此时A的刻度盘读数$a_{\updownarrow}=58.0^{\circ}$
+
+接着我们保持起偏器P的方位角不变，转动检偏器A的方位角来改变两个偏振器透射轴之间的夹角$\theta$,我们以$20^{\circ}$为间隔来改变$\theta$，同时测量$\theta$在$0^{\circ}$到$360^{\circ}$范围内变化时的透射光强$I_{m}$。我们根据马吕斯知道$I_m=(I_{max}-I_{min}cos^2\theta+I_{min})$，其中$I_{max}$和$I_{min}$分别是$\theta=0^{\circ}$和$\theta=90^{\circ}$时透射光强测量值，我们本实验测得$I_{max}=383.6\,\mu W$和$I_{min}=0\,\mu W$。最终我们测得的数据如表2所示,其中我们将$a$限定在了$360^{\circ}$以内。
+\begin{table}[!ht]
+\centering
+\caption{透射光强$I_m$与偏振器夹角$\theta$实验数据表}
+    \begin{tabular}{|c|c|c|c|c|}\hline
+    $\theta (^{\circ}) $& $a = a_{\updownarrow}+90+\theta (^{\circ}) $& $I_m$ ($\mu$W) & $(I_m-I_{min} )/(I_{max}-I_{min} )$ & $\cos^2\theta$ \\\hline
+    0.0    & 148.0   & 383.6 & 1.000  & 1.000  \\\hline
+    20.0    & 168.0   & 335.3 & 0.874  & 0.883  \\\hline
+    40.0    & 188.0   & 222.6 & 0.580  & 0.587  \\\hline
+    60.0    & 208.0   & 95    & 0.248  & 0.250  \\\hline
+    80.0    & 228.0   & 10.9  & 0.028  & 0.030  \\\hline
+    100.0   & 248.0   & 11.8  & 0.031  & 0.030  \\\hline
+    120.0   & 268.0   & 98.5  & 0.257  & 0.250  \\\hline
+    140.0   & 288.0   & 231.2 & 0.603  & 0.587  \\\hline
+    160.0   & 308.0   & 340.8 & 0.888  & 0.883  \\\hline
+    180.0   & 328.0   & 382.6 & 0.997  & 1.000  \\\hline
+    200.0   & 348.0   & 336.3 & 0.877  & 0.883  \\\hline
+    220.0   & 8.0     & 208.8 & 0.544  & 0.587  \\\hline
+    240.0   & 28.0    & 95.7  & 0.249  & 0.250  \\\hline
+    260.0   & 48.0    & 11.7  & 0.031  & 0.030  \\\hline
+    280.0   & 68.0    & 11.3  & 0.029  & 0.030  \\\hline
+    300.0   & 88.0    & 96.8  & 0.252  & 0.250  \\\hline
+    320.0   & 108.0   & 225.5 & 0.588  & 0.587  \\\hline
+    340.0   & 128.0   & 340.2 & 0.887  & 0.883  \\\hline
+    \end{tabular}
+\end{table}
+
+我们还可以根据测得数据画出透射光强$I_m$随方位角$\alpha$变化的雷达图(图1)以及$\dfrac{I_m-I_{min}}{I_{max}-I_{min}}$和$cos^2\theta$随$\theta$变化的关系图(图2)。
+\begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.6\textwidth]{Figure_1.png}}
+    \caption{透射光强随$a$变化雷达图}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.6\textwidth]{Figure_2.png}}
+    \caption{$\dfrac{I_m-I_{min}}{I_{max}-I_{min}}$和$cos^2\theta$随$\theta$变化关系图}
+\end{figure}
+
+通过图1我们可以发现光强随着$a$的变化出现一个周期性，而且光强极大和极小值对应的方位角差值近似就是$90^{\circ}$，这和我们马吕斯定律揭示的是相一致的。我们进一步通过图2研究$\dfrac{I_m-I_{min}}{I_{max}-I_{min}}$和$cos^2\theta$随$\theta$变化关系，发现$cos^2\theta$是散点图的一个较好的拟合曲线，当然也有个别点落在曲线之外，这可能和偏振片并非理想偏振片、光学仪器并非严格等高共轴以及偶然误差有关，但我们借助图三可以认为在实验误差范围内马吕斯定律是成立的。
+\subsection{波片的特性研究}
+
+我们让起偏器P透射轴水平，检偏器A透射轴垂直，即二者处于一个正交消光的状态。我们将波片$C_0$装于P和A之间，根据波片上白点使得波片的快轴近似位于竖直方向，然后我们微调$C_0$使得三者仍然保持消光状态，这时$C_0$的快轴已经准确地位于竖直方向，读出此时$C_0$刻度盘上的读数$C_{0\updownarrow}=100.0^{\circ}$。然后我们再装上待测的波片$C_x$，使得光束垂直透过，和上一步类似的操作，我们让四者处于正交消光的状态(由于$C_0$的快轴已经位于竖直方向，而起偏器的透射轴是水平方向，所以光线在透过起偏器再透过$C_0$时振动方向仍然是水平的，相当于$C_0$并未发挥实质作用，我们可以视作其不存在，所以我们依旧可以用上一步三个元件消光的方法来处理$C_x$)，那么$C_x$的某一轴就处于竖直方向，读出此时刻度盘的示数$C_x=87.0^{\circ}$。
+
+下面我们通过1/4波片组成全波片或者1/2波片来确实$C_x$的快轴和慢轴。首先我们保持之前的状态，即$C_x=87.0^{\circ}$，然后旋转起偏器P，使得入射线偏振光振动方向的方位角$\beta$分别为$15^{\circ}$、$30^{\circ}$和$45^{\circ}$，然后用检偏器A观察和测试线偏振光经过两个1/4波片后偏振态的改变,我们测量得到表3。
+\begin{table}[htbp]
+\centering
+\caption{$C_x$某轴与$C_0$快轴平行时对线偏振光偏振态的改变}
+    \begin{tabular}{|c|c|c|c|}\hline
+    $\beta=p-\overline{p_{\leftrightarrow}}(^\circ)$ & $p(^\circ)$ & 消光时检偏器A刻度盘刻度$a_i(^\circ)$ & $a = a_i - a_{\updownarrow} (^\circ)$ \\\hline
+    15.0    & 155.3 & 42.0    & -16.0 \\\hline
+    30.0    & 170.3 & 30.0    & -28.0 \\\hline
+    45.0    & 185.3 & 15.0   & -43.0 \\\hline
+    \end{tabular}
+\end{table}
+
+我们可以发现$a$和$\beta$近似互为相反数，也就是说偏振光的方向转动了$2\beta$，所以两个1/4波片组成了一个1/2波片，于是两个波片的快轴是平行的，也就是说此时$C_x$的快轴是竖直方向的。
+
+现在我们保持$C_0$不变，让$C_x$旋转$90^{\circ}$，使得$C_x$的快轴处于水平方向，也就是与$C_0$的快轴正交，我们重复上述的操作得到$C_x$某(快轴)与$C_0$快轴垂直时对线偏振光偏振态的改变，将测量数据整理为表4。
+\begin{table}[htbp]
+\centering
+\caption{$C_x$某轴与$C_0$快轴垂直时对线偏振光偏振态的改变}
+    \begin{tabular}{|c|c|c|c|}\hline
+    $\beta=p-\overline{p_{\leftrightarrow}}(^\circ)$ & $p(^\circ)$ & 消光时检偏器A刻度盘刻度$a_i(^\circ)$ & $a = a_i - a_{\updownarrow} (^\circ)$ \\\hline
+    15.0    & 155.3 & 72.0    & 14.0 \\\hline
+    30.0    & 170.3 & 88.0   & 30.0 \\\hline
+    45.0    & 185.3 & 102.0   & 44.0 \\\hline
+    \end{tabular}
+\end{table}
+
+我们可以发现此时$a$和$\beta$近似相等，也就是说偏振光的方向未发生改变，所以两个1/4波片组成了一个全波片，这和$C_x$的快轴此时位于水平方向是一致的。
+    
+下面我们研究单个1/4波片对偏振态的改变，保持$C_0$不变，取下$C_x$。改变起偏器P的方位角，使得其透射轴和水平方向的夹角$\beta$(含正负号)分别为$-22.5^{\circ}$、$-45^{\circ}$和$-67.5^{\circ}$，同时分别测得对应的A透射轴在长轴方向时刻度$a_i$(透射光强最大的位置)、光强最大值$I_{max}$和最小值$I_{min}$，我们将这些测量数据整理为表5。
+\begin{table}[htbp]
+\centering
+\caption{1/4波片$C_0$对偏振态的改变}
+    \begin{tabular}{|c|c|c|c|c|c|}\hline
+    $\beta=p-\overline{p_{\leftrightarrow}}(^\circ) $& $p(^\circ)$& $a_i(^\circ)$ & $I_{max}$ ($\mu W$)& $I_{min}$ ($\mu W$)& $b_2/a_2\approx I_{min}/I_{max}$ \\\hline
+    -22.5 & 117.8 & 148.0   & 395.2 & 68.2  & 0.173  \\\hline
+    -45.0 & 95.3  & 80.0    & 216.7 & 200.6 & 0.926  \\\hline
+    -67.5 & 72.8  & 62.0    & 224.9 & 34.6  & 0.154  \\\hline
+    \end{tabular}
+\end{table}
+
+我们测量出$a_i$后结合A透射轴在竖直方向时的刻度$a_{\updownarrow}$可以得到椭圆方位角的计算公式:
+\begin{equation}
+    \psi=a_i-a_{\updownarrow}+90^{\circ}
+\end{equation}
+
+同时我们还在实验原理部分得到过如下两个公式:
+\begin{equation}
+    |sin\delta|=\dfrac{2\sqrt{I_{min}/I_{max}}}{sin(2\beta)(1+I_{min}/I_{max})}
+\end{equation}
+\begin{equation}
+    \psi=\dfrac{1}{2}arctan(tan2\beta ·cos\delta)
+\end{equation}
+
+我们分别通过(1)计算$\psi$和(2)、(3)计算$\delta$、$\psi$可以得到下表:
+\begin{table}[htbp]
+\centering
+\caption{方位角$\psi$的计算}
+    \begin{tabular}{|c|c|c|c|}\hline
+    利用(1)计算长轴方位角$\psi(^{\circ})$&由(2)式计算$sin(\delta)$ &$\delta(^{\circ})$ & 由(3)式计算$\psi(^{\circ})$ \\\hline
+    180.0     & 1.002 & 无解 & 无解 \\\hline
+    112.0   & 0.999 & 87.8 & -45.0 \\\hline
+    94.0  & 0.961 & 74.0 & 7.7 \\\hline
+    \end{tabular}
+\end{table}
+
+当然，目前分析出来的数据暂时是不方便我们进行分析的，因此我们要先对计算结果进行修正。我们从计算公式(3)入手发现我们计算的时候出现了反三角函数，而由于正切函数的周期是$180^{\circ}$，因此对于$2\psi$可以加减$180^{\circ}$的整数倍，对应到$\psi$就是可以加减$90^{\circ}$。我们将计算出的第三组数据中$\psi$通过减$90^{\circ}$进行修正。同时对于第一组数据中我们由于实验的误差使得$sin\delta>1$，我们将$\delta$取为$90^{\circ}$进行修正计算。此外对于第一列的$\psi$，由于我们关注的是长轴，因此加减$180^{\circ}$不会产生实质影响，所以我们对该列数据都减$180^{\circ}$。从而我们可以得到修正后的一组数据。
+
+\begin{table}[!ht]
+\centering
+\caption{方位角$\psi$的计算(修正后)}
+    \begin{tabular}{|c|c|c|c|}\hline
+    修正后利用(1)计算长轴方位角$\psi(^{\circ})$&由(2)式计算$sin(\delta)$ &修正后$\delta(^{\circ})$ & 修正后$\psi(^{\circ})$ \\\hline
+    0.0     & 1.002 & 90.0 & 0.0 \\\hline
+    -68.0   & 0.999 & 87.8 & -45.0 \\\hline
+    -86.0  & 0.961 & 74.0 & -82.3 \\\hline
+    \end{tabular}
+\end{table}
+
+然后我们对修正后的实验数据进行分析，首先是第一组数据，我们可以发现两种计算结果下的$\psi$都是$0^{\circ}$，也就是说这是一个长轴和水平方向重合的椭圆偏振光。而第二组数据我们发现两个$\psi$的角度相差较大，我们回到其长短轴之比，在考虑到实验误差等因素我们可以认为这一组数据对应的是一组圆偏振光，所以方位角相差较大也是合理的。而第三组数据，我们修正后发现两个方位角是非常接近$-90^{\circ}$的，考虑到实验误差等因素我们可以认为方位角为$-90^{\circ}$，也就是说这一组数据对应于一个长轴位于竖直方向的椭圆偏振光。
+
+总而言之，$\beta$分别为$-22.5^{\circ}$、$-45^{\circ}$和$-67.5^{\circ}$时我们将会分别得到长轴位于水平方向的椭圆偏振光、圆偏振光和长轴位于竖直方向的椭圆偏振光。
+
+我们除了探究1/4波片的特性，我们还可以通过实验来检验其质量。我们保持起偏器的方位角为$p=\overline{p_{\leftrightarrow}}+45^{\circ}=185.3$,同时我们让$C_0$的快轴位于竖直方向，转动检偏器A来改变两个偏振器透射轴夹角$\theta$，我们以$20^{\circ}$为间隔来改变$\theta$，同时测量$\theta$在$0^{\circ}$到$360^{\circ}$范围内变化时的透射光强$I_{m}$,根据测得数据我们可以整理出表8和雷达图(图3)。
+\begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.5\textwidth]{Figure_3.png}}
+    \caption{1/4波片存在时透射光强随$a$变化雷达图}
+\end{figure}
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+\begin{table}[ht]
+\centering
+\caption{1/4波片存在时透射光强随偏振器夹角变化关系}
+    \begin{tabular}{|c|c|c|}\hline
+    $\theta(^{\circ})$& $a = a_{\updownarrow}+90+\theta(^{\circ}) $&$ I_m (\mu W) $\\\hline
+    0.0   & 148.0  & 25.2  \\\hline
+    20.0  & 168.0  & 25.3  \\\hline
+    40.0  & 188.0  & 25.9  \\\hline
+    60.0  & 208.0  & 25.8  \\\hline
+    80.0  & 228.0  & 25.4  \\\hline
+    100.0  & 248.0  & 25.2  \\\hline
+    120.0  & 268.0  & 25.0  \\\hline
+    140.0  & 288.0  & 24.9  \\\hline
+    160.0  & 308.0  & 24.9  \\\hline
+    180.0  & 328.0  & 25.4  \\\hline
+    200.0  & 348.0  & 25.7  \\\hline
+    220.0  & 8.0   & 25.9  \\\hline
+    240.0  & 28.0  & 25.9  \\\hline
+    260.0  & 48.0  & 25.7  \\\hline
+    280.0  & 68.0  & 25.4  \\\hline
+    300.0  & 88.0  & 25.0  \\\hline
+    320.0  & 108.0  & 24.8  \\\hline
+    340.0  & 128.0  & 25.0  \\\hline
+    \end{tabular}%
+\end{table}%
+我们观察雷达图会发现它近似为一个圆，而考虑到实验误差的存在，我们可以知道在理想情况下它确实是一个圆，这也是和我们的理论吻合的，我们据此也可以认为这个波片是一个近似严格的1/4波片。
+
+\section{分析讨论}
+(a)我们研究1/4波片特性的时候方位角计算公式$\psi=\dfrac{1}{2}arctan(tan2\beta ·cos\delta)$涉及了反正切函数，而且由于系数$\dfrac{1}{2}$的影响使得这个$\psi$可能需要加减$\dfrac{\pi}{2}$，但是我们又知道对于一个方位角而言如果我们任意的加减一个$\dfrac{\pi}{2}$是有可能会导致角度变成了和竖直方向夹角的，这显然会影响我们的分析，而最终我们选择了减去$\dfrac{\pi}{2}$进行修正正是因为计算公式中$tan2\beta$在$\beta=-67.5$时脱离了$[-\dfrac{\pi}{2},\dfrac{\pi}{2}]$，因此我们在计算$\psi$时也应该加减一个$\dfrac{\pi}{2}$才能得到真正的方位角，至于是加还是减是无所谓的，因为我们考虑的是长轴和坐标轴的夹角，因此相差$\pi$的角度都可以认为是同一个角度。
+
+(b)在仪器方面我们前后两次涉及到了以$20^{\circ}$的间隔转动刻度盘，每次我们都需要利用手电筒照明调节刻度盘后再关闭手电筒进行测量光强，这一系列操作较为费时，可以考虑对于刻度盘装置进行改进，使其可以完成自动化的转动一定间隔的度数，这样会使得测量更为方便。
+
+\section{原始数据}
+\begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.5\textwidth]{1.png}}
+    \caption{原始数据1}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.5\textwidth]{2.png}}
+    \caption{原始数据2}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.5\textwidth]{3.png}}
+    \caption{原始数据3}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.5\textwidth]{4.png}}
+    \caption{原始数据4}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.45\textwidth]{5.png}}
+    \caption{原始数据5}
+\end{figure}
+\end{document}

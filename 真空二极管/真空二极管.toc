@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1}摘要}{2}{section.1}%
+\contentsline {section}{\numberline {2}实验原理}{2}{section.2}%
+\contentsline {section}{\numberline {3}实验仪器}{2}{section.3}%
+\contentsline {section}{\numberline {4}实验步骤及数据处理}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}连接电路}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}加速电压$U_\alpha $、磁感应强度$B$与发射电流$I_e$的关系}{5}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}热电子发射速度分布}{9}{subsection.4.3}%
+\contentsline {section}{\numberline {5}分析讨论}{9}{section.5}%
+\contentsline {section}{\numberline {6}原始数据}{10}{section.6}%

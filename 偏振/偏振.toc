@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}摘要}{2}{section.1}%
+\contentsline {section}{\numberline {2}实验原理}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}马吕斯定律}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}布儒斯特定律}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}波片与偏振态改变}{2}{subsection.2.3}%
+\contentsline {section}{\numberline {3}实验仪器}{3}{section.3}%
+\contentsline {section}{\numberline {4}实验步骤及数据处理}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}准备工作}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}观察布儒斯特角和偏振器的特性}{3}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}波片的特性研究}{6}{subsection.4.3}%
+\contentsline {section}{\numberline {5}分析讨论}{9}{section.5}%
+\contentsline {section}{\numberline {6}原始数据}{10}{section.6}%

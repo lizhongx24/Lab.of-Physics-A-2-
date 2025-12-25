@@ -1,0 +1,275 @@
+\documentclass[12pt]{article}
+
+\usepackage{ctex}
+
+\usepackage{graphicx,float,indentfirst,amsmath,amssymb,geometry,subfig,hyperref,tikz}
+\usepackage{bookmark}
+\usetikzlibrary{arrows.meta, calc}
+
+\hypersetup{hidelinks}
+
+\geometry{a4paper,scale=0.8}
+
+\title{霍尔效应实验报告}
+\author{\kaishu 工物42 \quad \kaishu 李中翔 \quad \kaishu 2024011032}
+\date{\today}
+\pagenumbering{arabic}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+\section{摘要}
+
+    当载流导体置于磁场中时,会在垂直于电流和磁场方向产生电势差,这一现象便是我们熟知的霍尔效应,而载流体中的粒子带电的正负性会影响霍尔电压的方向,本实验中将据此判断晶片的类型,并更进一步地定性计算晶片载流子浓度、电导率和载流子迁移率。
+
+\section{实验原理}
+\subsection{霍尔效应原理}
+
+    如图1所示,当载流子经过磁场区域时会收到洛伦兹力而发生偏转,从而元件的两侧会积累电荷出现电势差并产生电场,而电荷偏转过程将持续至载流子所受洛伦兹力和电场力平衡,也就是$qvB=qE$,而再结合电压与电场关系$U_H=Eb$和电流与载流子关系$I=nqvbd$,我们可以得到$U_H=\dfrac{IB}{nqd}$,其中我们将$R_H=\dfrac{1}{nq}$定义为霍尔系数,$K_H=\dfrac{R_H}{d}=\dfrac{1}{nqd}$定义为霍尔片的灵敏度,这样我们还可以将霍尔电压表达式改写为$U_H=R_H\dfrac{IB}{d}=K_HIB$。
+    \begin{figure}[H]
+    \centering
+    \begin{minipage}[c]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{霍尔效应示意图.png}
+    \caption{霍尔效应示意图}
+    \end{minipage}
+    \begin{minipage}[c]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{霍尔效应与电运输量.png}
+    \caption{霍尔效应与电运输参量}
+    \end{minipage}
+    \end{figure}
+
+\subsection{霍尔效应观测中的副效应}
+
+    在实际实验中我们并不能很容易地测得准确的霍尔效应,如下的几个副效应将会干扰霍尔电压的测量:(a)不等位效应,这一效应会使电极间产生附加电压$U_0$,且这个电压会随电流一同反向,而不随磁场改变。(b)厄廷好森效应,这一效应会让上下表面出现温差电动势$U_E$,且其正比于$I$和$B$的乘积,因此其方向与二者均有关。(c)能斯脱效应,载流子的运动产生热流并在两端产生电势差$U_N$,本实验中我们认为它的符号只与磁场方向有关。(d)里纪-勒杜克效应,上述热流中载流子速度的不同使得其在磁场作用下会在两端产生电动势$U_R$,本实验中也认为它的符号只与磁场方向有关。(e)电路漂移、杂散电磁场和接地不良等原因会使得电压表有附加电压$U_S$,其与电流方向和磁场方向均无关。
+
+    在实际测量时我们可以先测得电压$U_1$,然后让电流反向测得$U_2$,接着让磁场反向测得$U_3$,最后再让电流反向测得$U_4$,这样根据上述副效应的特性我们可以得到:
+    \begin{equation}
+        U_H+U_E=(U_1-U_2+U_3-U_4)/4
+    \end{equation}
+    \begin{equation}
+        U_0=(U_1-U_2-U_3+U_4)/4
+    \end{equation}
+    \begin{equation}
+        U_N+U_R=(U_1+_2-U_3-U_4)/4
+    \end{equation}
+    \begin{equation}
+        U_S=(U_1+_2+U_3+U_4)/4
+    \end{equation}
+
+\subsection{电运输参量与磁强传感器}
+
+    我们观察霍尔电压表达式可以知道它关联了宏观和微观的物理量,其中$U_H$、$I$和$B$这些电磁学物理量我们可以通过电压表、电流表和磁强计测得,而样品的尺寸参量$L$、$b$和$d$我们可以直接测得,这样我们可以据此计算出微观的$nq$。如果我们知道了载流子所带电荷就可以进一步的计算出载流子浓度$n$。
+
+    除了$n$之外迁移率$\mu$也是重要的微观参数,我们在电磁学中知道电导率$\sigma=nq\mu$,在实验中(如图2)我们知道材料电阻可以由$R_{AC}=\dfrac{U_{AC}}{I}$得到,再结合电阻定律可以得到$\sigma=\dfrac{L}{bd}\dfrac{I}{U_{AC}}$,这样我们就得到了迁移率表达式$\mu=\dfrac{L}{bd}\dfrac{1}{nq}\dfrac{I}{U_{AC}}$。
+
+    当我们测量出霍尔电压$U_H$并已知材料的载流子浓度$n$时边可以利用$U_H=\dfrac{IB}{nqd}$的变形$B=\dfrac{nqdU_H}{I}$计算出磁场,这一特性也使得霍尔元件可以作为磁强传感器。
+
+\section{实验仪器}
+
+    精密稳压稳流直流电源(提供工作电流)、单路稳压稳流直流电源(提供励磁电流)、5位半数字万用表、电磁铁($C=247\,mT/A$)、双刀双掷换向开关、霍尔样品及支架($L=7\,mm,b=10\,mm,d=300\,\mu m$)、测试探头接线盒和导线。
+
+\section{实验步骤与数据处理}
+\subsection{连接实验电路}
+
+    首先按照下图进行电路的连接。我们将$UDP3310S$的$CH1$通道电压设置为$20\,V$,电流设置为$0\,mA$,打开输出检查无误后将输出关闭,类似地将$WANPTEK$电压上限调至$18\,V$,电流上限调至$0\,A$,检查无误后关闭输出。其中由于两个电压不能同时接入电路,而电压表$F8808A$精度更高,因此在实验中我们使用$F8808A$替代$8246B$进行测量。
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+        \includegraphics[width=0.7\textwidth]{实验电路图.png}
+    }
+    \caption{实验电路示意图}
+    \end{figure}
+
+\subsection{单晶硅片载流子类型}
+
+    我们首先将霍尔电压表$U_H(F8808A)$接入电路测量$AA'$之间电压,确认电路连接无误后启动工作电流源和励磁电流源输出。我们将工作电流设置为$4\,mA$,励磁电流设置为$0\,mA$,记录电压表数值得到副效应电压$U=-11.009\,mV$。然后保持工作电流不变增加励磁电流至$500\,mA$，记录电压表数值得到副效应电压与霍尔电压之和$U'=-22.381\,mA$。由此可得霍尔电压的正负,即$A$端为负,$A'$端为正。而此时的磁场方向为向下的,工作电流的方向向内,这样我们根据洛伦兹力的方向可以知道该半导体霍尔片的导电类型为$N$型号。
+
+\subsection{单晶硅片载流子浓度}
+
+    将励磁电流$I_M$设置为$500\,mA$保持不变,然后将工作电流以$2\,mA$为间隔从$2\,mA$逐步增加至$10\,mA$,记录工作电流源上显示的实际工作电流$I$,在每个工作电流下改变工作电流与励磁电流的方向,分别记录每次的电压从而可以利用公式$(1)-(4)$计算出霍尔电压,我们将数据整理为表1。然后我们还可以绘制出$U_H\sim I$关系图,我们进行线性拟合后可以发现线性程度较好。根据$B=CI_M$可以得到过程中磁场大小$B=123.5\,mT$。然后我们利用$U_H=K_HIB=R_H\dfrac{IB}{d}$以及线性拟合的斜率可以得到$K_H=22.057\times\,V·A^{-1}·T^{-1},R_H=6.617\times 10^{-3}\,V·m·A^{-1}·T^{-1}$。而$R_H=\dfrac{1}{nq}$,我们取$q=1.6\times 10^{-19}\,C$,从而可以计算出载流子浓度$n=9.445\times 10^{20}\,m^{-3}=9.445\times 10^{14}\,cm^{-3}$。
+
+    \begin{table}[H]
+    \centering
+    \caption{载流子浓度实验记录表}
+    \begin{tabular}{|c|c|c|c|c|c|} \hline
+    工作电流$I(mA)$&$U_1(mV)$&$U_2(mV)$&$U_3(mV)$&$U_4(mV)$&$U_H(mV)$\\ \hline
+    2	&-11.496 &	25.565 & 17.245 & -2.091 & -4.431\\ \hline
+    4	&-34.561 &  83.123 & 60.193 & -12.341&-11.287\\ \hline
+    6	&-44.945 &  102.024 & 69.045& -11.764&-16.540\\ \hline
+    8   &-55.048 &119.277  &74.229  &-15.235 &-21.215\\\hline
+    10  &-78.639 &123.776 &67.609 & -24.271  &-27.633\\\hline
+    \end{tabular}
+    \end{table}
+
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+        \includegraphics[width=0.8\textwidth]{载流子浓度.jpg}
+    }
+    \caption{霍尔电压与工作电流关系图}
+    \end{figure}
+
+\subsection{电磁铁的磁场测量}
+
+    我们将工作电流$I$设置为$4\,mA$并保持不变。以$200\,mA$为间隔将励磁电流$I_M$从$200\,mA$逐步增加至$1000\,mA$,记录实际的励磁电流。在每个励磁电流下改变工作电流与励磁电流的方向,分别记录每次的电压从而可以利用公式$(1)-(4)$计算出霍尔电压,我们将数据整理为表2。然后我们还可以绘制出$U_H\sim I_M$关系图,我们进行线性拟合后可以发现线性程度较好。然后我们根据载流子浓度实验中得到的霍尔灵敏度$K_H=22.057\times\,V·A^{-1}·T^{-1}$,可以就算出每个励磁电流下的磁感应强度B,然后根据和$B=CI_M$计算出的理论值比较并计算出相对误差,最终我们可以得到表3。我们观察表3可以发现相对误差在$20\%$左右,但是考虑到由于霍尔灵敏度是拟合得到的,而且在电压测量时由于电磁效应等使得电压是在一定范围内波动的,因此这一相对误差是可以接受的。
+
+    \begin{table}[H]
+    \centering
+    \caption{电磁铁磁场测量实验记录表}
+    \begin{tabular}{|c|c|c|c|c|c|} \hline
+    励磁电流$I_M(A)$&$U_1(mV)$&$U_2(mV)$&$U_3(mV)$&$U_4(mV)$&$U_H(mV)$\\ \hline
+    0.2   & -17.215 & 50.758 & 42.286 & -8.894 & -4.198 \\\hline
+    0.4   & -21.843 & 54.847 & 37.043 & -4.715 & -8.733 \\\hline
+    0.6   & -26.127 & 60.454 & 31.423 & -0.743 & -13.604 \\\hline
+    0.8   & -30.436 & 64.180 & 26.971 & 3.455 & -17.775 \\\hline
+    1.0   & -34.456 & 67.268 & 22.347 & 7.507 & -21.721 \\\hline
+    \end{tabular}
+    \end{table}
+
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+        \includegraphics[width=0.8\textwidth]{电磁铁磁场.jpg}
+    }
+    \caption{霍尔电压与励磁电流关系图}
+    \end{figure}
+
+    \begin{table}[H]
+    \centering
+    \caption{电磁铁磁场测量值与理论值比较}
+    \begin{tabular}{|c|c|c|c|} \hline
+    励磁电流$I_M(A)$&磁场测量值$(mT)$&磁场理论值$(mT)$&相对误差\\ \hline
+    0.2&36.0  & 49.4  & 27.17\% \\\hline
+    0.4&74.8  & 98.8  & 24.25\% \\\hline
+    0.6&116.6  & 148.2  & 21.33\% \\\hline
+    0.8&152.3  & 197.6  & 22.91\% \\\hline
+    1.0&186.1  & 247.0  & 24.64\% \\\hline
+    \end{tabular}
+    \end{table}
+
+\subsection{单晶硅片的迁移率}
+
+    我们将工作电流和励磁电流都调整为$0\,mA$,然后关闭输出,我们将$8088A$的两端分别连接A点和C点。启动工作电流源输出并以$2\,mA$为间隔将工作电流从$2\,mA$逐步增加至$10\,mA$,记录对应的实际工作电流。在每个工作电流下改变工作电流的方向分别记录电压表示数$U_{AC}$和电流源上的电压值$U_T$,然后我们可以数据整理为表4。
+
+    \begin{table}[H]
+    \centering
+    \caption{电磁铁磁场测量值与理论值比较}
+    \begin{tabular}{|c|c|c|c|c|} \hline
+    $I(mA)$&$U_{AC}+(V)$&$U_T+(V)$&$U_{AC}-(V)$&$U_T-(V)$\\\hline
+    2     & 0.230  & 7.356  & -0.211  & 8.649  \\\hline
+    4     & 0.457  & 9.946  & -0.423  & 11.015  \\\hline
+    6     & 0.683  & 11.986  & -0.643  & 12.607  \\\hline
+    8     & 0.924  & 13.365  & -0.866  & 13.915  \\\hline
+    10    & 1.145  & 14.532  & -1.097  & 15.045  \\\hline
+    \end{tabular}
+    \end{table}
+
+    然后我们根据上述数据可以得到$U_{AC}-I$和$U_{T}-I$关系图。我们观察图6和图7可以发现$U_{AC}$与$I$的关系是线性的,但是$U_T$随$I$的变化不是线性的。然后$U_{AC}+$与$U_{AC}-$(绝对值)考虑到测量值的波动,可以认为在整体上它们是基本重合的。但是$U_T-$却会比$U_T+$整体偏大一些。
+
+    \begin{figure}[H]
+    \centering
+    \begin{minipage}[c]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{UAC.jpg}
+    \caption{$U_{AC}-I$关系图}
+    \end{minipage}
+    \begin{minipage}[c]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{UT.jpg}
+    \caption{$U_{T}-I$关系图}
+    \end{minipage}
+    \end{figure}
+
+    我们通过线性拟合$U_{AC}$和$I$的关系得到图8。我们取线性拟合得到的斜率绝对值的平均值,从而材料电阻$R_{AC}=\dfrac{U_{AC}}{I}=1.116\times 10^2\,\Omega$,我们进一步由$R=\rho\dfrac{L}{bd}$可以计算出电阻率$\rho=4.783\,\Omega·cm$,取倒数即为电导率$\sigma=0.209\,\Omega^{-1}·cm^{-1}$。然后我们利用载流子浓度实验所得$n$结合$\sigma=nq\mu$可以得到$\mu=1.383\times 10^3 \,cm^2·V^{-1}·s^{-1}$。我们再将所得数据与图9和图10的数据进行比较,我们掺杂浓度$n$大致在$10^{15}\,cm^{-3}$附近,从图中得出N型材料对应的电阻率在$1-10\,\Omega·cm$之间,这和我们实验中$\rho=4.783\,\Omega·cm$相符,而迁移率量级为$10^3\,V^{-1}·s^{-1}$,和我们测得$\mu=1.383\times 10^3 \,cm^2·V^{-1}·s^{-1}$也是相符的,可见我们设计的实验室合理的。不过实验也存在一定缺陷,由于电磁效应以及光照的干扰使得我们在实验中电压测量是在波动的,很容易产生较大误差。
+
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+        \includegraphics[width=0.7\textwidth]{线性拟合.jpg}
+    }
+    \caption{$U_{AC}$与$I$线性拟合}
+    \end{figure}
+
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+        \includegraphics[width=0.7\textwidth]{1.png}
+    }
+    \caption{文献中硅片的电阻率与掺杂浓度的关系}
+    \end{figure}
+
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+        \includegraphics[width=0.7\textwidth]{2.png}
+    }
+    \caption{文献中硅片迁移率与掺杂浓度的关系}
+    \end{figure}
+
+\subsection{接触电阻估算}
+
+    我们利用单晶硅片迁移率实验所得数据结合图11所示等效电路图计算导线与单晶硅片的接触电阻。
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+        \includegraphics[width=0.8\textwidth]{等效电路图.png}
+    }
+    \caption{等效电路图}
+    \end{figure}
+
+    我们观察等效电路可以知道总电阻$R_T$由如下五部分构成:(a)+电极处的接触电阻$R_{con}^{+}$;(b)+电极到A电极间的材料电阻$R_{A+}$;(c)A电极到C电极间的材料电阻$R_{AC}$;(d)C电极到-电极间的材料电阻$R_{C-}$;(e)-电极处的接触电阻$R_{con}^{-}$。
+
+    在之前的实验中我们可以通过$R_{AC}=\dfrac{U_{AC}}{I}$计算出材料电阻,利用$R_T=\dfrac{U_T}{I}$计算出总电阻,然后$R_{A+}$与$R_{C-}$可以由材料电阻率进行计算,在实验中+电极到A电极间和C电极到-电极间距离都大致等于A到C之间的距离,因此我们可以认为$R_{A+}=R_{C-}=R_{AC}$。最终我们可以将数据整理为表5。
+
+    \begin{table}[H]
+    \centering
+    \caption{接触电阻估计实验数据记录表}
+    \begin{tabular}{|c|c|c|c|c|c|c|} \hline
+    $I(mA)$&$U_{AC}(V)$&$U_T(V)$&$R_{AC}(k\Omega)$&$R_{A+}+R_{C-}$&$R_T(k\Omega)$&$R_{con}(k\Omega)$\\\hline
+    2     & 0.230  & 7.356  & 0.115  & 0.230  & 3.678  & 3.333  \\\hline
+    2     & -0.211  & 8.649  & 0.106  & 0.211  & 4.325  & 4.008  \\\hline
+    4     & 0.457  & 9.946  & 0.114  & 0.229  & 2.487  & 2.144  \\\hline
+    4     & -0.423  & 11.015  & 0.106  & 0.212  & 2.754  & 2.436  \\\hline
+    6     & 0.683  & 11.986  & 0.114  & 0.228  & 1.998  & 1.656  \\\hline
+    6     & -0.643  & 12.607  & 0.107  & 0.214  & 2.101  & 1.780  \\\hline
+    8     & 0.924  & 13.365  & 0.115  & 0.231  & 1.671  & 1.324  \\\hline
+    8     & -0.866  & 13.915  & 0.108  & 0.216  & 1.739  & 1.415  \\\hline
+    10    & 1.145  & 14.532  & 0.114  & 0.229  & 1.453  & 1.110  \\\hline
+    10    & -1.097  & 15.045  & 0.110  & 0.219  & 1.505  & 1.176  \\\hline
+    \end{tabular}
+    \end{table}
+
+    我们根据实验数据可以发现随着电流的增大$R_{AC}$无明显变化且改变工作电流方向也不会影响其大小,但是接触电阻却会因为电流的增大而逐步降低,而且反向的工作电流下其阻值更大。
+
+\section{分析讨论}
+
+\noindent(a)在实验中知道霍尔元件的灵敏度和载流子浓度$n$是成反比的,因此如果降低载流子浓度则会提高灵敏度,但是$\sigma=nq\mu$,如果$n$很小会导致内阻极大,这样还会导致温度产生的干扰信号较大,从而影响我们的测量。
+
+\noindent(b)实验中我们发现接触电阻会随着工作电流增加而变化,这可能是因为随着工作电流增加,接触点产生的焦耳热增加,导致局部温度升高,而半导体和金属接触面的性质会随温度变化,从而改变电阻。也可能是因为半导体与金属的接触相当于一个非线性元件,因此电阻会因为电流的改变而发生明显变化。我们还发现电流的正负不会改变材料电阻但是会改变接触电阻,这可能是因为金属和半导体接触类似于一个二极管的结构,在不同方向上是不对称的,因此电流的不同流向会产生一个电阻差别,但是材料中的载流子遵循欧姆定律,因此电阻不会受电流方向的影响。
+
+\noindent(c)不等位效应和磁场无关,因此我们可以在只存在工作电流的条件下直接进行测量。也可以根据公式(1)-(4)使用$\dfrac{U_1+U_4}{2}$进行近似。
+
+\noindent(d)在实验中由于光照以及电磁效应等使得测量所得的电压时常处于波动中,而且有时波动的状况还较大,我们可以考虑添加一个黑箱,在黑箱中提供稳定的光照,同时使其具有电磁屏蔽的作用,从而避免这些因素造成的测量值波动。
+
+\section{原始数据}
+
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+        \includegraphics[width=0.8\textwidth]{原始数据1.png}
+    }
+    \caption{原始数据1}
+    \end{figure}
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+        \includegraphics[width=0.8\textwidth]{原始数据2.png}
+    }
+    \caption{原始数据2}
+    \end{figure}
+
+\end{document}

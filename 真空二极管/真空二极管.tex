@@ -1,0 +1,208 @@
+\documentclass[12pt]{article}
+
+\usepackage{ctex}
+
+\usepackage{graphicx,float,indentfirst,amsmath,amssymb,geometry,subfig,hyperref,tikz}
+\usepackage{bookmark}
+\usetikzlibrary{arrows.meta, calc}
+
+\hypersetup{hidelinks}
+
+\geometry{a4paper,scale=0.8}
+
+\title{真空二极管实验报告}
+\author{\kaishu 工物42 \quad \kaishu 李中翔 \quad \kaishu 2024011032}
+\date{\today}
+\pagenumbering{arabic}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+\section{摘要}
+
+    根据电磁学所学知识我们知道真空二极管中电子会因为阳极和阴极之间的加速电压而获得速度，如果加上磁场那么电子的运动轨迹会发生弯曲。而本实验则是在此基础上探究磁场大小和加速电压的大小对真空二极管发射电流的影响。
+
+\section{实验原理}
+
+    我们如下图所示,当没有电场时速度为$v$的电子垂直入射到均匀磁场$B$中会在磁场力的作用下做圆周运动,即$evB=mv^2/R$。当磁场增大时则半径减小,而磁场增大到一定程度时则电子无法到达阳极，这会使得阳极电流开始急剧下降,而这临界情况对应着$2R$与阳极半径$r$相等,据此可以得到临界方程为$2mv_C=reB_C$。而实验中亥姆霍兹线圈产生的磁场$B_C=kI_M$,因此我们可以将临界方程改写为$v_C=\dfrac{rek}{2m}I_M$。我们再利用$U_\alpha e=\dfrac{1}{2}mv_C^2$,联立可以得到临界磁场和加速电压的关系$B_C^2=\dfrac{8mU_\alpha}{er^2}$。
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.6\textwidth]{实验原理示意图.png}}
+    \caption{实验原理示意图}
+    \end{figure}
+\section{实验仪器}
+
+    三路输出稳压直流电源、数字万用表、固定在亥姆霍兹线圈中的真空二极管、特斯拉计、装有$10$个串联的$1\,k\Omega$电阻和串联的$100\,\Omega$电阻的电阻板和导线若干。
+
+\section{实验步骤及数据处理}
+\subsection{连接电路}
+
+    首先按照下图在电源输出开关关闭的状态下进行电路连接。电路连接完成后使电源输出开关闭合并等待几分钟使得灯丝温度稳定。
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.6\textwidth]{真空二极管实验电路.png}}
+    \caption{实验电路图}
+    \end{figure}
+    
+    将电源CH1的正负极分别与亥姆霍兹线圈左侧的红黑插孔连接并将电源CH1设置为$0.5\,$A。打开特斯拉计并将量程调整至$0.01\, mT$,用特斯拉计测量亥姆霍兹线圈透明塑料板中间位置的磁感应强度的大小为$1.15\,mT$,方向为从右侧线圈指向左侧线圈。
+
+    将电源CH1设置为$0.0\,A$并将其正负极分别与亥姆霍兹线圈右侧线圈的红黑插孔相连,完成连接后将电源CH1设定为$0.5\,A$并在特斯拉计霍尔元件的朝向与上一步朝向一致条件下测量线右侧线圈在透明塑料板中间位置的磁感应强度的大小为$1.14\,mT$,方向为从右侧线圈指向左侧线圈。
+
+    将电源CH1设置为$0.0\,A$,将两个线圈串联顺接并使用电源CH1提供励磁电流$I_M$。完成连接后将电源CH1设定为$0.5\,A$并用特斯拉计测量亥姆霍兹线圈透明塑料板四角的四个螺孔处和中间位置的磁感应强度,测量结果整理为表1,其中方向均为从右侧线圈指向左侧线圈。
+    \begin{table}[!ht]
+    \centering
+    \caption{亥姆霍兹线圈磁场数据记录表}
+    \begin{tabular}{|c|c|} \hline
+    位置&磁感应强度$B(mT)$\\\hline
+    左上角	&2.160   \\ \hline
+    右上角	&2.150   \\ \hline
+    左下角	&2.160   \\ \hline
+    右下角  &2.170 	\\\hline
+    中间位置  &2.200 	\\\hline
+    平均值  &2.168\\\hline
+    \end{tabular}
+    \end{table}
+
+    我们再以$0.2\,A$为步长调节励磁电流,测量其在$0.0\,A\sim 1.4\,A$范围内变化时C点磁感应强度B,将数据整理为表2。我们进一步画出其对应的变化关系图并进行直线拟合,从而可以近似得到二者关系为$B=kI_M$,其中$k=4.2896\,mT/A$。
+    \begin{table}[!ht]
+    \centering
+    \caption{B与$I_M$的关系表}
+    \begin{tabular}{|c|c|} \hline
+    励磁电流$I_M(A)$&磁感应强度$B(mT)$\\\hline
+    1.4	&5.97  \\ \hline
+    1.2	&5.11   \\ \hline
+    1.0	&4.28  \\ \hline
+    0.8  &3.45	\\\hline
+    0.6  &2.63	\\\hline
+    0.4  &1.79\\\hline
+    0.2  &0.94\\\hline
+    0.0  &0.12\\\hline
+    \end{tabular}
+    \end{table}
+
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.6\textwidth]{IB关系图.png}}
+    \caption{$B-I_M$关系图}
+    \end{figure}
+
+\subsection{加速电压$U_\alpha$、磁感应强度$B$与发射电流$I_e$的关系}
+
+    我们将加速电压$U_\alpha$设置为$4\,V$,并以$10\, mA$为步长改变励磁电流$I_M$(即改变磁感应强度$B$),记录电阻两端电压并依此就算出相应的发射电流$I_e$。然后再分别将加速电压设置为$6\,V$、$8\,V$和$10\,V$重复上述操作,最终我们将四组加速电压下的发射电流与励磁电流关系绘制成下图。
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.9\textwidth]{IeIM关系图.png}}
+    \caption{$I_e-I_M$关系图}
+    \end{figure}
+
+    我们观察图像可以知道对于特定的一个加速电压下发射电流随励磁电流的变化可以分为三段:(a)在磁场较小,也就是励磁电流较小时发射电流几乎无明显变化。(b)励磁电流进一步增大使得磁场接近或刚超过临界值时发射电流将会迅速减小。(c)磁场大于临界值后发射电流的减小开始放缓并趋于零。
+
+    我们再对比四条曲线可以发现则大加速电压会使得发射电流整体增大,而且根据电场做功可以知道增大加速电压也会使得发射电子整体速度相应增大。
+
+    我们将$I_e$随$I_M$变化很快的一段的延长线与$I_M$很低时的$I_e$值的交点对应的$I_M$称为临界励磁电流$I_C$,我们通过画图的方法可以得到各加速电压下的$I_C$(相应值已标于图中)。
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.8\textwidth]{4V.png}}
+    \caption{$4\,V$下的临界励磁电流}
+    \end{figure}
+
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.8\textwidth]{6V.png}}
+    \caption{$6\,V$下的临界励磁电流}
+    \end{figure}
+
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.8\textwidth]{8V.png}}
+    \caption{$8\,V$下的临界励磁电流}
+    \end{figure}
+
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.8\textwidth]{10V.png}}
+    \caption{$10\,V$下的临界励磁电流}
+    \end{figure}
+
+    实验中我们还测量了灯丝电流$I_f=0.6\,A$和相应的电压$U_f=3.398\,V$,从而可以计算出灯丝电阻$R_f=5.663\,\Omega$。当我们把灯丝电阻考虑上时灯丝不同位置上的电势不同,我们考虑加速电压的平均值$U_\alpha'=U_\alpha-\dfrac{1}{2}U_f$,然后我们再利用$B_C=\sqrt{\dfrac{8mU_\alpha'}{eb^2}}$得出电子的荷质比，其中阳极半径$b=4.55\times 10^{-3}\,m$。我们考虑使用直线拟合的方式计算荷质比,因此我们将上式变形为$\dfrac{e}{m}\dfrac{1}{U_\alpha'}=\dfrac{8}{b^2B_C^2}$,然后我们将四组加速电压对应的数据整理为下表。
+    \begin{table}[!ht]
+    \centering
+    \caption{B与$I_M$的关系表}
+    \begin{tabular}{|c|c|c|} \hline
+    加速电压平均值倒数$\dfrac{1}{U_\alpha'}(V^{-1})$&临界磁感应强度$B_C(mT)$&$\dfrac{8}{b^2B_C^2}(GC·kg^{-1}·V^{-1})$\\\hline
+    0.435	&2.705 & 52.812 \\\hline
+    0.233	&3.572 & 30.286\\ \hline
+    0.159	&4.193 & 21.979\\ \hline
+    0.120   &4.742 & 17.185\\\hline
+    \end{tabular}
+    \end{table}
+
+    我们根据上标数据可以画出下图并作出直线拟合,我们可以计算出荷质比近似为$1.258\times 10^{11}\, C/kg$,这和真实值为$1.759\times 10^{11}\, C/kg$接近,考虑到实验中涉及拟合的结果以及相应的实验误差,因此$28\,\%$左右的相对误差可以接受。
+
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.9\textwidth]{荷质比.png}}
+    \caption{直线拟合求解荷质比}
+    \end{figure}
+
+\subsection{热电子发射速度分布}
+
+    我们考虑电子随速度变换的数密度函数为$\rho(v)$,那么到达阳极的电子产生电流$I_e=\int_{v_C}^{\infty} \rho(v)dv$,这样的话我们就可以求导得到$\rho(v)=-\dfrac{dI_e}{dv_C}$,而我们在实验原理部分得到$v_C=\dfrac{rek}{2m}I_M$,于是我们可以进一步得到$\rho(v)=-\dfrac{2m}{rek}\dfrac{dI_e}{dI_M}$。我们把分布考虑为关于$I_M$的函数,由于全域的积分结果为$I_e\,max$,即可以考虑为没有磁场时的发射电流,所以我们依此归一化后可以得到新的因变量$f(I_M)=-\dfrac{1}{I_{e\,max}}\dfrac{dI_e}{dI_M}$,由于数据是不均匀变化的,我们实际计算时取$f(I_M)=-\dfrac{1}{I_{e\,max}}\dfrac{\Delta I_e}{\Delta I_M}$。我们根据这一公式计算$4\,V$和$10\,V$的情况并可以绘制出如下图像。
+
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.8\textwidth]{电子分布.png}}
+    \caption{电子分布因变量与$I_M$关系图}
+    \end{figure}
+
+    我们观察分布曲线可以发现其为单峰分布(在$10\,V$的情况下由于数据采样有限,从而产生了近似"双峰"的误差,我们观察曲线也可以发现这主要是由一到两个点导致的),此外当我们增大加速电压时电子的分布也会整体向右平移。
+
+\section{分析讨论}
+
+(a)实验中我们发现随着励磁电流的增大发射电流最初会有略微的增大,尤其是在下降前的小范围内较为明显,这一现象可能有两个原因:一个原因是当大量电子从阴极发射出来时会有部分电子产生一个与加速电场相反的电场,从而影响了最终形成的发射电流,而我们施加磁场后我们可以让这部分电子螺旋运动至阳极,从而减小反向电场,使得合场强增大,于是更多的电子可以顺利到达阳极,最终表现为发射电流的略微增大。第二个可能原因是电子的速度和方向都是随机分布的,而我们施加电流后相当于起到一个磁聚焦的作用,电子在磁场作用下沿着中心线做螺旋运动,更大概率有效地打到阳极,而不是到达无效区域,从而使得发射电流增大。
+
+(b)查询资料我们可以知道在统计意义下热电子的速度分布不是麦克斯韦分布,而是遵循$f(v)dv=\dfrac{m^2}{2k^2T^2}v^3e^{-\dfrac{mv^2}{2kT}}dv$,而这一曲线的形状和我们在数据分析的最后部分是一致的。不过我们可以发现我们采样密度较小时容易产生误差($10\,V$产生了双峰),因此后续实验可以考虑增大采样密度,减小电流之间的间隔,从而避免显著的误差。
+
+\section{原始数据}
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.9\textwidth]{1.png}}
+    \caption{磁场原始数据}
+    \end{figure}
+
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.8\textwidth]{2.jpg}}
+    \caption{发射电流原始数据1}
+    \end{figure}
+
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.8\textwidth]{3.jpg}}
+    \caption{发射电流原始数据2}
+    \end{figure}
+
+    \begin{figure}[H]
+    \centering
+    \subfloat{
+    \includegraphics[width=0.8\textwidth]{4.jpg}}
+    \caption{发射电流原始数据3}
+    \end{figure}
+
+\end{document}
+

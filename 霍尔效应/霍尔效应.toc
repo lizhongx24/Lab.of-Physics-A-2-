@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}摘要}{2}{section.1}%
+\contentsline {section}{\numberline {2}实验原理}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}霍尔效应原理}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}霍尔效应观测中的副效应}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}电运输参量与磁强传感器}{3}{subsection.2.3}%
+\contentsline {section}{\numberline {3}实验仪器}{3}{section.3}%
+\contentsline {section}{\numberline {4}实验步骤与数据处理}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}连接实验电路}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}单晶硅片载流子类型}{4}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}单晶硅片载流子浓度}{4}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}电磁铁的磁场测量}{5}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}单晶硅片的迁移率}{7}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}接触电阻估算}{9}{subsection.4.6}%
+\contentsline {section}{\numberline {5}分析讨论}{10}{section.5}%
+\contentsline {section}{\numberline {6}原始数据}{11}{section.6}%
